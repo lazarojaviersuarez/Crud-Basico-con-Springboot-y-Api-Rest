@@ -39,27 +39,27 @@ public class SecurityConfig {
         return NoOpPasswordEncoder.getInstance();
     }
 
-//    @Bean
-//   protected SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity)throws  Exception{
-//     httpSecurity.cors()
-//             .configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues())
-//         .and()
-//         .csrf()
-//         .disable()//desavilitar la configuracion de fabrica que trae el csrf
-//         .authorizeHttpRequests()
-//         .requestMatchers("/user/login","/user/createU")
-//         .permitAll()
-//         .anyRequest()
-//         .authenticated()
-//         .and()
-//         .exceptionHandling()
-//         .disable()
-//         .sessionManagement()
-//         .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-//         httpSecurity.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
-//         return httpSecurity.build();
-//
-//    }
+   @Bean
+  protected SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity)throws  Exception{
+    httpSecurity.cors()
+            .configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues())
+        .and()
+        .csrf()
+        .disable()//desavilitar la configuracion de fabrica que trae el csrf
+        .authorizeHttpRequests()
+        .requestMatchers("/user/login","/user/createU")
+        .permitAll()
+        .anyRequest()
+        .authenticated()
+        .and()
+        .exceptionHandling()
+        .disable()
+        .sessionManagement()
+       .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        httpSecurity.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+        return httpSecurity.build();
+
+   }
 
 
 
