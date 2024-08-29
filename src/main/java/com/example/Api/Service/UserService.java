@@ -105,34 +105,7 @@ private  JwtUtil jwtUtil1;
                 return user;
             }
 
-//@Override
-//public ResponseEntity<String> loginToken(Map<String, String> requestMap) {
-//    try {
-//        String username = requestMap.get("username");
-//        String password = requestMap.get("password");
-//
-//        System.out.println("Username: " + username);
-//        System.out.println("Password: " + password);
-//
-//        User userOptional = userRepository.findByEmail(username);
-//        if (userOptional != null && userOptional.getUsername().equals(username)) {
-//            User user = userOptional;
-//            System.out.println("Stored Password: " + user.getPassword());
-//
-//            if (.matches(password, user.getPassword())) {
-//                String responseBody = "{\"mensaje\":\"Se ha iniciado sesión con éxito\",\"rol\":\"" + user.getRole() + "\"}";
-//
-//                return new ResponseEntity<>(responseBody, HttpStatus.OK);
-//            } else {
-//                return new ResponseEntity<>("{\"mensaje\":\""+"contraseña incorrectos"+"\"}", HttpStatus.BAD_REQUEST);
-//            }
-//        } else {
-//            return new ResponseEntity<>("Usuario no encontrado", HttpStatus.NOT_FOUND);
-//        }
-//    } catch (Exception exception) {
-//        log.error("{}", exception);
-//        return new ResponseEntity<>("Credenciales incorrectas", HttpStatus.BAD_REQUEST);
-//    }
+
 
         }
 
